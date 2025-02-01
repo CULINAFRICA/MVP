@@ -3,17 +3,20 @@ body, html {
 	padding: 0;
 	height: 100%;
 	width: 100%;
+	max-width: 100%;
 	font-family: 'Comic Sans Ms' cursive, sans-serif;
 	background-color: #ffeb3b;
 	color: #4a90e2;
+	overflow-x: hidden;
 }
 
 .game-area {
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
+	position: relative;
 }
 
 .culin-game-title {
@@ -96,50 +99,88 @@ body, html {
     z-index: 2;	
 }
 
+.square.drag img {
+	width: 250px;
+	height: 200px;
+	object-fit: cover;
+	display: block;
+}
+
+
 .drag-piece-1, .drag-piece-2, .drag-piece-3, .drag-piece-4 {
 	background-color: #f4a460;
-	margin: 5px;
-	padding:10px;
-	border-radius: 15px;
+	margin: 0px;
+	padding:0px;
+	border: 5px;
+	width: 300px;
+	height: 250;
+	border-radius: 10px;
 	cursor: move;
 	color: #fff;
-	transform: scale(1);
+	transform: scale(0.9);
 	opacity: 1;
-	transition: tranform 0.3s ease, opacity 0.3s ease;
+	overflow: hidden;
+	transition: tranform 0.3s ease-in-out, z-index 0.3s;
 }
 
 
-.animate-on-load {
-	animation: simpleBounce 1s ease-in-out;
-}
-
-@keyframes simpleBounce {
-    0%, 100% {
-		transform: translateY(0);
-    }
-	50% {
-		transform: translateY(-10px);
+@media screen and (min-width: 600px){
+	#container {
+	  width: 100%;
+	  padding: 10px;
 	}
-}
-
-    .culin-game-drop, .culin-game-drag-zoom {
-		margin: 10px 0;
-	}
-
-@media only screen and (min-width: 768px) and (max-width: 1204px) {
-	#body {
-		max-width: 690px;
-	}
-		.container {
-		max-width: 100%;
-		margin: 0 auto;
-  }
-		.game-area {
+	
+	.game-area {
 		flex-direction: column;
-  }
+		align-items: center;
+	}
+	
+	img {
+		width: 100%;
+		height: auto;
+	}
 	
 	
 }
+
+
+@media screen and (min-width: 601px) and 
+     (max-width: 1024px)   {
+	    #container {
+		width: 90%;
+		margin: auto;
+	}
+	
+	.game-area {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	
+} 
+
+
+@media screen and (min-width: 1025px){
+	#container {
+		max-width: 1200px;
+		margin: auto;
+	}
+	
+}
+
+@media screen and (min-width: 1200px){
+	html, body {
+		min-width: 320px;
+	}
+	
+	#container {
+		min-width: 320px;
+	}
+	
+}
+	
+
+
 
 	
 	

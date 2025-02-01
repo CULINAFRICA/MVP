@@ -1,16 +1,24 @@
+ *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;	
+}
+
+   
 body{
     background-color: #393E46;
     display : flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height : 50vw;
+    min-height : 100vw;
     flex-direction: column;
 }
 .container {
 	display: flex;
 	flex-direction: column;
 	height: auto;
-    width: 100vw;
+    width: 100%;
+    max-width: 600px;
 	padding: 10px;
     margin: auto;
 	box-sizing: border-box;
@@ -105,6 +113,7 @@ img:hover{
 
 img:hover {
     opacity: 1.0;
+	outline: 5px;
 }
 
 .zoom {
