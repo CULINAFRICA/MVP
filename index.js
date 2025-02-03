@@ -32,7 +32,7 @@ var dishDescriptionOptions = generateUniqueNumbers();
 //     var randomDish = Math.floor(Math.random()* 11);
 //     randomNumbers.push(randomNumber);
 // }
-console.log("dishDescriptionOptions "+dishDescriptionOptions)
+console.log("dishDescriptionOptions sequence "+dishDescriptionOptions)
 // console.log("dish description Options " +dishDescriptionOptions[0])
 // console.log("dish description Options " +dishDescriptionOptions[1])
 // console.log("dish description Options " +dishDescriptionOptions[2])
@@ -43,6 +43,7 @@ document.querySelector(".drop-piece-1").setAttribute("src", "./images/img/"+afri
 
 // gets the answer to the picture above and puts in any of the 4 options
 document.querySelector(".drag-piece-"+dishDescriptionOptions[0]).setAttribute("src", "./images/img-d/"+(dishDescriptionAnswer[randomDescriptionAnswer].name)+".png");
+document.querySelector(".drag-piece-"+dishDescriptionOptions[0]).setAttribute("id", (dishDescriptionAnswer[randomDescriptionAnswer].name));
 
 
 //generate 3 other pictures from dishDescription array that is different from the picture question
@@ -51,9 +52,17 @@ console.log("otherOptions", otherOptions);
 var dishDescriptionOtherOptions1 = africanDishesDescription.filter(obj => obj.id === otherOptions[0]);
 var dishDescriptionOtherOptions2 = africanDishesDescription.filter(obj => obj.id === otherOptions[1]);
 var dishDescriptionOtherOptions3 = africanDishesDescription.filter(obj => obj.id === otherOptions[2]);
+
+//set images and id on the remaining 3 other options
 document.querySelector(".drag-piece-"+dishDescriptionOptions[1]).setAttribute("src", "./images/img-d/"+(dishDescriptionOtherOptions1[randomDescriptionAnswerOption1].name)+".png");
+document.querySelector(".drag-piece-"+dishDescriptionOptions[1]).setAttribute("id", (dishDescriptionOtherOptions1[randomDescriptionAnswerOption1].name));
+
 document.querySelector(".drag-piece-"+dishDescriptionOptions[2]).setAttribute("src", "./images/img-d/"+(dishDescriptionOtherOptions2[randomDescriptionAnswerOption2].name)+".png");
+document.querySelector(".drag-piece-"+dishDescriptionOptions[2]).setAttribute("id", (dishDescriptionOtherOptions2[randomDescriptionAnswerOption2].name));
+
 document.querySelector(".drag-piece-"+dishDescriptionOptions[3]).setAttribute("src", "./images/img-d/"+(dishDescriptionOtherOptions3[randomDescriptionAnswerOption3].name)+".png");
+document.querySelector(".drag-piece-"+dishDescriptionOptions[3]).setAttribute("id", (dishDescriptionOtherOptions3[randomDescriptionAnswerOption3].name));
+
 
 //function to generate the remining 3 options excluding the index of the answer to the question
 function generateUniqueDishes(excludeIndex) {
@@ -87,68 +96,148 @@ document.getElementById("container").addEventListener("click", function(){
     window.location.reload();
 })
 
-var options1 = document.querySelector(".drag-piece-"+dishDescriptionOptions[0]);
-console.log ("Option A "+ options1);
-var options2 = document.querySelector(".drag-piece-"+dishDescriptionOptions[1]);
-console.log ("Option B "+ options2);
-var options3 = document.querySelector(".drag-piece-"+dishDescriptionOptions[2]);
-console.log ("Option C "+ options3);
-var options4 = document.querySelector(".drag-piece-"+dishDescriptionOptions[3]);
-console.log ("Option D "+ options4);
+// var options1 = document.querySelector(".drag-piece-"+dishDescriptionOptions[0]);
+// console.log ("Option A "+ options1);
+// var options2 = document.querySelector(".drag-piece-"+dishDescriptionOptions[1]);
+// console.log ("Option B "+ options2);
+// var options3 = document.querySelector(".drag-piece-"+dishDescriptionOptions[2]);
+// console.log ("Option C "+ options3);
+// var options4 = document.querySelector(".drag-piece-"+dishDescriptionOptions[3]);
+// console.log ("Option D "+ options4);
 
 
-options1.addEventListener("drag", function(event){
-    console.log(event.target.id + " is being dragged.");
-});
-options2.addEventListener("drag", function(event){
-    console.log(event.target.id + " is being dragged.");
-});
+// options1.addEventListener("drag", function(event){
+//     console.log(event.target.id + " is being dragged.");
+// });
+// options2.addEventListener("drag", function(event){
+//     console.log(event.target.id + " is being dragged.");
+// });
 
-options3.addEventListener("drag", function(event){
-    console.log(event.target.id + " is being dragged.");
-});
+// options3.addEventListener("drag", function(event){
+//     console.log(event.target.id + " is being dragged.");
+// });
 
-options4.addEventListener("drag", function(event){
-    console.log(event.target.id + " is being dragged.");
-});
-
-
+// options4.addEventListener("drag", function(event){
+//     console.log(event.target.id + " is being dragged.");
+// });
 
 
 
-const answerDrop = document.querySelector(".drop-1");
-console.log(answerDrop);
 
-let beingDragged;
-answerDrop.addEventListener("dragover", function(event){
-    event.preventDefault();
-    console.log("You are dragging something over " + event.target.classList);
-});
-answerDrop.addEventListener("dragenter", function(event){
-    event.target.classList.add("highlight");
-    console.log("You entered " + event.target.classList);
-});
 
-answerDrop.addEventListener("dragleave", function(event){
-    event.target.classList.remove("highlight");
-    console.log("You left " + event.target.classList);
-});
-answerDrop.addEventListener("drop", function(event){
-    event.preventDefault();
-    event.target.append(event.target);
-    console.log("You dropped " + event.target.classList);
-    console.log("And dropped on " + answerDrop.classList);
-    if(event.target.classList.contains("drag-piece-"+dishDescriptionOptions[0])){
-        console.log("Correct Answer!");
-    } else {
-        console.log("Wrong Answer!");
-    }
-    event.target.classList.remove("highlight");
-});
-answerDrop.addEventListener("dragend", function(event){
-    event.target.classList.add("target");
-    setTimeout(()=> event.target.classList.remove("target"),100);
-    console.log("You are no longer dragging");
-});
+// const answerDrop = document.querySelector(".drop-1");
+// console.log(answerDrop);
+
+// let beingDragged ;
+// answerDrop.addEventListener("dragover", (event)=>{
+//     event.preventDefault();
+//     console.log("You are dragging "+ event.target.id + " over " + event.target.classList);
+// });
+// answerDrop.addEventListener("dragenter", function(event){
+//      event.target.classList.add("highlight");
+//     console.log("You entered " + event.target.classList);
+// });
+
+// answerDrop.addEventListener("dragleave", function(event){
+//     event.target.classList.remove("highlight");
+//     console.log("You left " + event.target.classList);
+// });
+// answerDrop.addEventListener("drop", function(event){
+//     event.preventDefault();
+//     event.target.appendChild(event.target);
+//     console.log("You dropped " + event.target.classList);
+//     console.log("And dropped on " + answerDrop.classList);
+//     if(event.target.classList.contains("drag-piece-"+dishDescriptionOptions[0])){
+//         console.log("Correct Answer!");
+//     } else {
+//         console.log("Wrong Answer!");
+//     }
+//     event.target.classList.remove("highlight");
+// });
+// answerDrop.addEventListener("dragend", function(event){
+//     event.target.classList.add("target");
+//     setTimeout(()=> event.target.classList.remove("target"),100);
+//     console.log("You are no longer dragging");
+// });
 
 // answer.addEventListener("dragend",);
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const draggableItems = document.querySelectorAll(".drag img");
+    const dropZone = document.querySelector(".drop-1");
+    const body = document.body; 
+    const levelTitle = document.getElementById("level-title");
+    let level = 1; // Start at Level 1
+
+    let correctAnswer = dishDescriptionAnswer[randomDescriptionAnswer].name;
+    console.log("Correct Answer:", correctAnswer); 
+
+    // Add dragstart event to all draggable items
+    draggableItems.forEach((item) => {
+        item.setAttribute("draggable", "true"); 
+        item.addEventListener("dragstart", (event) => {
+            event.dataTransfer.setData("text", event.target.id);
+            console.log("Dragging:", event.target.id);
+        });
+    });
+
+    // Allow dropping
+    dropZone.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        dropZone.classList.add("highlight");
+    });
+
+    // Handle drop event
+    dropZone.addEventListener("drop", (event) => {
+        event.preventDefault();
+        dropZone.classList.remove("highlight");
+
+        let draggedItemId = event.dataTransfer.getData("text");
+        let draggedItem = document.getElementById(draggedItemId);
+
+        if (draggedItem) {
+            dropZone.innerHTML = ""; // Clear placeholder text
+            dropZone.appendChild(draggedItem); // Move the image
+            
+            let isCorrect = draggedItemId === correctAnswer;
+            console.log("Correct:", isCorrect);
+
+            if (isCorrect) {
+                body.style.backgroundColor = "rgb(0,255,0)"; 
+                level++; // Increase level
+                levelTitle.textContent = `CORRECT!!: Level ${level}`; // Update Level
+                
+                // Reload page after 1 second to generate a new question
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000);
+
+            } else {
+                body.style.backgroundColor = "pink"; 
+                levelTitle.textContent = "Wrong Answer: Game Over"; // Game Over Message
+
+                setTimeout(() => {
+                    body.style.backgroundColor = ""; 
+                    window.location.reload();
+                }, 1000);
+            }
+        }
+    });
+
+    // Reset Game on any button click after Game Over
+    document.addEventListener("click", () => {
+        if (levelTitle.textContent === "Game Over") {
+            level = 1;
+            levelTitle.textContent = "Level 1"; 
+            body.style.backgroundColor = ""; 
+            window.location.reload(); // Restart the game
+        }
+    });
+
+    // Handle drag leave
+    dropZone.addEventListener("dragleave", (event) => {
+        dropZone.classList.remove("highlight");
+    });
+});

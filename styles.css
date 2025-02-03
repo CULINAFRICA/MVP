@@ -75,8 +75,8 @@ p {
 
 .drop-1 {
     background-color: beige;
-    height: 260px;
-    width: 260px;
+    height: 250px;
+    width: 250px;
     text-align: center;
     padding-top: 10px;
 }
@@ -128,4 +128,11 @@ img:hover {
   
 .zoom:hover {
     transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+#after-drop{
+    margin-top: 10px;
+    width: 250px;
+    height: 250px;
+
 }
