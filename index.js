@@ -92,9 +92,9 @@ function generateUniqueNumbers() {
 
 // console.log(generateUniqueNumbers());
 
-document.getElementById("container").addEventListener("click", function(){
-    window.location.reload();
-})
+// document.getElementById("container").addEventListener("click", function(){
+    // window.location.reload();
+// })
 
 // var options1 = document.querySelector(".drag-piece-"+dishDescriptionOptions[0]);
 // console.log ("Option A "+ options1);
@@ -164,24 +164,128 @@ document.getElementById("container").addEventListener("click", function(){
 
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
-    const draggableItems = document.querySelectorAll(".drag img");
     const dropZone = document.querySelector(".drop-1");
-    const body = document.body; 
+    const body = document.body;
     const levelTitle = document.getElementById("level-title");
-    let level = 1; // Start at Level 1
+    let level = 1;
+    let correctAnswer;
+    let draggedItemOriginalParent = null; // Store original position
 
-    let correctAnswer = dishDescriptionAnswer[randomDescriptionAnswer].name;
-    console.log("Correct Answer:", correctAnswer); 
+    function loadNewQuestion() {
+        var randomDescriptionAnswer = Math.floor(Math.random() * 2); //
 
-    // Add dragstart event to all draggable items
-    draggableItems.forEach((item) => {
-        item.setAttribute("draggable", "true"); 
-        item.addEventListener("dragstart", (event) => {
-            event.dataTransfer.setData("text", event.target.id);
-            console.log("Dragging:", event.target.id);
+        let newRandomIndex = Math.floor(Math.random() * africanDishes.length);
+        correctAnswer = africanDishesDescription.filter(obj => obj.id === newRandomIndex);
+        console.log (" correctAnswer " + correctAnswer[randomDescriptionAnswer].name);
+
+        // Update question image
+        document.querySelector(".drop-piece-1").setAttribute("src", `./images/img/${africanDishes[newRandomIndex]}-P.png`);
+        document.querySelector(".drop-piece-1").setAttribute("alt", `${africanDishes[newRandomIndex]}'s picture`);
+
+        // Get 4 new random options
+        let dishDescriptionOptions = generateUniqueNumbers();
+        let otherOptions = generateUniqueDishes(newRandomIndex);
+        console.log("dish Description Options " + dishDescriptionOptions);
+
+        // Get correct answer position
+        let correctOption = document.querySelector(`.drag-piece-${dishDescriptionOptions[0]}`);
+        correctOption.setAttribute("src", `./images/img-d/${correctAnswer[randomDescriptionAnswer].name}.png`);
+        correctOption.setAttribute("id", correctAnswer[randomDescriptionAnswer].name);
+        correctOption.dataset.correct = "true"; // Mark correct option
+
+        // Assign incorrect options
+        for (let i = 1; i <= 3; i++) {
+
+            // Generate 2 incorrect dishes for each option
+            var randomWrongDishAnswer = Math.floor(Math.random() * 2); //
+
+            let wrongDish = africanDishesDescription.filter(obj => obj.id === otherOptions[i - 1])[randomWrongDishAnswer].name;
+            let wrongOption = document.querySelector(`.drag-piece-${dishDescriptionOptions[i]}`);
+            wrongOption.setAttribute("src", `./images/img-d/${wrongDish}.png`);
+            wrongOption.setAttribute("id", wrongDish);
+            wrongOption.dataset.correct = "false"; // Mark incorrect options
+        }
+
+        // Remove previous event listeners before adding new ones
+        removeExistingListeners();
+        initializeInteractions();
+
+        console.log("New Correct Answer:", correctAnswer);
+    }
+
+    function checkAnswer(selectedItem) {
+        let isCorrect = selectedItem.dataset.correct === "true";
+
+        //When an image is selected it is moved to .drop-1
+        dropZone.innerHTML = ""; 
+        dropZone.appendChild(selectedItem.cloneNode(true)); //clone instead of moving
+
+
+        if (isCorrect) {
+            body.style.backgroundColor = "rgb(0,255,0)"; // Green for correct
+            level++; // Increment by 1
+            levelTitle.innerText = `CORRECT!!: Level ${level}`; // Update level title
+
+            setTimeout(() => {
+                // body.style.backgroundColor = "";
+                // resetGame(selectedItem);
+                resetGame();
+                loadNewQuestion();
+            }, 1000);
+        } else {
+            body.style.backgroundColor = "pink"; // Red for incorrect
+            levelTitle.innerText = "Wrong Answer: Game Over";
+
+            setTimeout(() => {
+                body.style.backgroundColor = "";
+                level = 1; // Reset level
+                levelTitle.innerText = "Level 1";
+                window.location.reload(); // Restart game
+            }, 1000);
+        }
+    }
+        // Return image to original position
+        function resetGame() {
+            // Reset .drag items without using draggedItemOriginalParent
+            document.querySelectorAll(".drag img").forEach((item) => {
+                let newItem = item.cloneNode(true);
+                item.parentNode.replaceChild(newItem, item);
+            });
+        
+            dropZone.innerHTML = ""; // Clear drop zone
+            initializeInteractions(); // Reinitialize event listeners
+        }
+
+
+    
+
+    function initializeInteractions() {
+        const draggableItems = document.querySelectorAll(".drag img");
+
+        draggableItems.forEach((item) => {
+            item.setAttribute("draggable", "true"); 
+
+            item.addEventListener("dragstart", (event) => {
+                event.dataTransfer.setData("text", event.target.id);
+                draggedItemOriginalParent = event.target.parentElement; // Store original position
+            });
+
+            item.addEventListener("dblclick", () => {
+                checkAnswer(item);
+            });
         });
-    });
+    }
+
+    function removeExistingListeners() {
+        const draggableItems = document.querySelectorAll(".drag img");
+
+        draggableItems.forEach((item) => {
+            let newItem = item.cloneNode(true); // Clone the element to remove existing listeners
+            item.parentNode.replaceChild(newItem, item);
+        });
+    }
 
     // Allow dropping
     dropZone.addEventListener("dragover", (event) => {
@@ -189,7 +293,6 @@ document.addEventListener("DOMContentLoaded", function () {
         dropZone.classList.add("highlight");
     });
 
-    // Handle drop event
     dropZone.addEventListener("drop", (event) => {
         event.preventDefault();
         dropZone.classList.remove("highlight");
@@ -198,46 +301,11 @@ document.addEventListener("DOMContentLoaded", function () {
         let draggedItem = document.getElementById(draggedItemId);
 
         if (draggedItem) {
-            dropZone.innerHTML = ""; // Clear placeholder text
-            dropZone.appendChild(draggedItem); // Move the image
-            
-            let isCorrect = draggedItemId === correctAnswer;
-            console.log("Correct:", isCorrect);
-
-            if (isCorrect) {
-                body.style.backgroundColor = "rgb(0,255,0)"; 
-                level++; // Increase level
-                levelTitle.textContent = `CORRECT!!: Level ${level}`; // Update Level
-                
-                // Reload page after 1 second to generate a new question
-                setTimeout(() => {
-                    window.location.reload();
-                }, 1000);
-
-            } else {
-                body.style.backgroundColor = "pink"; 
-                levelTitle.textContent = "Wrong Answer: Game Over"; // Game Over Message
-
-                setTimeout(() => {
-                    body.style.backgroundColor = ""; 
-                    window.location.reload();
-                }, 1000);
-            }
+            checkAnswer(draggedItem);
         }
     });
 
-    // Reset Game on any button click after Game Over
-    document.addEventListener("click", () => {
-        if (levelTitle.textContent === "Game Over") {
-            level = 1;
-            levelTitle.textContent = "Level 1"; 
-            body.style.backgroundColor = ""; 
-            window.location.reload(); // Restart the game
-        }
-    });
-
-    // Handle drag leave
-    dropZone.addEventListener("dragleave", (event) => {
-        dropZone.classList.remove("highlight");
-    });
+    // Generate new question on load
+    loadNewQuestion();
 });
+
