@@ -123,8 +123,6 @@ function generateUniqueNumbers() {
 
 
 
-
-
 // const answerDrop = document.querySelector(".drop-1");
 // console.log(answerDrop);
 
