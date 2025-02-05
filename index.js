@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
             levelTitle.innerText = `CORRECT!!: Level ${level}`; // Update level title
 
             setTimeout(() => {
-                // body.style.backgroundColor = "";
+                body.style.backgroundColor = "";
                 // resetGame(selectedItem);
                 resetGame();
                 loadNewQuestion();
