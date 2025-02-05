@@ -1,24 +1,25 @@
 body, html {
+	display: flex;
 	margin: 0;
 	padding: 0;
-	height: 100%;
+	height: 100vh;
 	width: 100%;
-	max-width: 100%;
 	font-family: 'Comic Sans Ms' cursive, sans-serif;
 	background-color: #ffeb3b;
-	color: #4a90e2;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .game-area {
 	display: flex;
 	flex: 1;
 	flex-direction: column;
+	padding-top: 5px;
+	margin-top: 0;
 	justify-content: flex-start;
 	align-items: center;
 	position: relative;
 }
-
+	
 .culin-game-title {
 	text-align: center;
 	padding-top: 20px;
@@ -38,72 +39,16 @@ body, html {
 }
 
 
-.drop-piece-1, .drop-piece-2, .drop-piece-3, .drop-piece-4 {
-	width: 100%;
-	height: 200px;
-	border: 3px dashed #4a90e2;
+.drop-piece-1 {
+	width: 300px;
+	height: 250px;
 	background-color: rgba(255, 255, 255, 0.5);
 	display: flex;
-	justify-content: center;
+	border-radius: 10px;
+	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 10px;
 	
-}
-
-#dropZone {
-    width: 200px;
-    height: 200px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.5);	
-}
-
-#dropZone::before {
-	content: '';
-	position: absolute;
-	top: 65%;
-	left: 65%;
-	transform: translate(-50%, -50%);
-	width: 100%;
-	height: 80%;
-	border: 3px dashed #4a90e2;
-	border-radius: 15px;
-}
-
-#dropText {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: tranlate(-50%, -50%);
-	z-index: 1;
-	color: 4a90e2;
-	font-size: 1em;
-}
-
-#dropZone img + #dropText {
-    display: none;	
-}
-
-#dropZone img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	border-radius: 15px;
-	position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;	
-}
-
-.square.drag img {
-	width: 250px;
-	height: 200px;
-	object-fit: cover;
-	display: block;
 }
 
 
@@ -112,71 +57,71 @@ body, html {
 	margin: 0px;
 	padding:0px;
 	border: 5px;
-	width: 300px;
-	height: 250;
 	border-radius: 10px;
-	cursor: move;
+	cursor: pointer;
 	color: #fff;
-	transform: scale(0.9);
+	transform: scale(1);
 	opacity: 1;
 	overflow: hidden;
 	transition: tranform 0.3s ease-in-out, z-index 0.3s;
 }
 
 
-@media screen and (min-width: 600px){
+@media screen and  (max-width: 480px){
+	
+	#level-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    margin:  4%;
+    color: #d35400;
+    text-align: center;
+	/* For the Level Name of the media */
+}
+
+
+	
+	p {
+		font-size: 1rem;
+		text-align: center;
+		justify-content: center;
+		/* for the all the texts*/
+	}
+		
+		
+	    .game-area {
+		width: 1000%;
+		max-width:480px;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center-left;
+	}	
+
+	.game-area img {
+		width: 250px;
+		height: 120px;
+	}
+	
+
 	#container {
-	  width: 100%;
-	  padding: 10px;
-	}
-	
-	.game-area {
-		flex-direction: column;
-		align-items: center;
-	}
-	
+	display: flex;
+	flex-direction: column;
+	height: auto;
+    width: 100%;
+    max-width: 480px;
+	box-sizing: border-box;
+}
+
 	img {
 		width: 100%;
 		height: auto;
 	}
 	
-	
+    .square {
+    width: 135px;
+    height: 120px;
+    display: flex;
 }
 
-
-@media screen and (min-width: 601px) and 
-     (max-width: 1024px)   {
-	    #container {
-		width: 90%;
-		margin: auto;
-	}
-	
-	.game-area {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-	
-} 
-
-
-@media screen and (min-width: 1025px){
-	#container {
-		max-width: 1200px;
-		margin: auto;
-	}
-	
-}
-
-@media screen and (min-width: 1200px){
-	html, body {
-		min-width: 320px;
-	}
-	
-	#container {
-		min-width: 320px;
-	}
-	
 }
 	
 
