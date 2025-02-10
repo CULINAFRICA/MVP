@@ -1,4 +1,4 @@
-body {
+bodY {
 	display: flex;
 	margin: 0;
 	padding: 0;
@@ -67,59 +67,56 @@ body {
 }
 
 
-@media screen and  (max-width: 480px){
-	
-	#level-title {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 2rem;
-    margin:  4%;
-    color: #d35400;
-    text-align: center;
-	/* For the Level Name of the media */
-}
-
-
-	
-	p {
-		font-size: 1rem;
-		text-align: center;
-		justify-content: center;
-		/* for the all the texts*/
+@media screen and  (max-width: 660px){
+    #level-title {
+		font-size:1.5rem;
 	}
-		
-		
-	    .game-area {
-		width: 1000%;
-		max-width:480px;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: center-left;
-	}	
 
-	.game-area img {
-		width: 250px;
-		height: 120px;
+	.container {
+       display: flex;
+	   flex-direction: column;
 	}
+ 
 	
-
-	#container {
-	display: flex;
-	flex-direction: column;
-	height: auto;
-    width: 100%;
-    max-width: 480px;
-	box-sizing: border-box;
-}
-
-	img {
-		width: 100%;
-		height: auto;
-	}
-	
-    .square {
-    width: 135px;
-    height: 120px;
+.game-area {
     display: flex;
+	flex-direction: column;
 }
+
+.square {
+	display: flex;
+	height: 150px;
+	width: 120px;
+	flex: 1 1 (50%-10%);
+	justify-items:center;
+	margin: 2px;
+}
+
+.square img {
+	width: 150px;
+	height: 150px;
+}
+
+#culin-game-drag-zoom {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	gap:0px;
+	max-width: 660px;
+
+}
+
+
+p {
+ margin-top: 2px;
+ font-size: 1rem;
+}
+
+#culin-game-drag-zoom img {
+	height: 150px;
+	width: 170px;
+}
+
+
 
 }
