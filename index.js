@@ -223,6 +223,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (isCorrect) {
             body.style.backgroundColor = "rgb(0,255,0)"; // Green for correct
+            var audio = new Audio("sound/right.mp3");
+            audio.play();
             level++; // Increment by 1
             levelTitle.innerText = `CORRECT!!: Level ${level}`; // Update level title
 
@@ -234,6 +236,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 1000);
         } else {
             body.style.backgroundColor = "pink"; // Red for incorrect
+            var audio = new Audio("sound/wrong.mp3");
+            audio.play();
             levelTitle.innerText = "Wrong Answer: Game Over";
 
             setTimeout(() => {
@@ -306,4 +310,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Generate new question on load
     loadNewQuestion();
 });
+
+
 
