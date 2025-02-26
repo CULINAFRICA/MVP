@@ -1,5 +1,25 @@
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const music = document.getElementById('background-music');
+
+    function playMusic() {
+        music.volume = 0.5; // play at 50% of computer volume
+        music.loop = true; //ensure looping
+        music.play().catch(error =>{
+            console.log("Autoplay blocked by browser", error);
+        });
+    }
+    playMusic(); //Attempt autoplay
+
+    //if autoplay is blocked, play when the user interacts with the page
+    document.addEventListener("click", () => {
+        music.play();
+    }, {once:true});
+});
+
+
+
 var randomNumbers = [];
 var africanDishes = [ "Alloco", "Brik", "Claclo", "Dibi", "Eguisi", "FouFou", "Garri", "Hawawshi", "Injera", "Jollof", "Kedjenou", "Lafidi", "Mafe" ];
 
