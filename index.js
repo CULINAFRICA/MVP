@@ -1,10 +1,10 @@
-
+import { africanDishes, africanDishesDescription, africanDishesFunFacts} from "./data.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     const music = document.getElementById('background-music');
 
     function playMusic() {
-        music.volume = 0.5; // play at 50% of computer volume
+        music.volume = 0.0; // play at 50% of computer volume
         music.loop = true; //ensure looping
         music.play().catch(error =>{
             console.log("Autoplay blocked by browser", error);
@@ -18,16 +18,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }, {once:true});
 });
 
+console.log( "funfacts = " + africanDishesFunFacts[2].funFact );
 
 
 var randomNumbers = [];
-var africanDishes = [ "Alloco", "Brik", "Claclo", "Dibi", "Eguisi", "FouFou", "Garri", "Hawawshi", "Injera", "Jollof", "Kedjenou", "Lafidi", "Mafe" ];
+var funfact = "";
+
+//commented out bacause data moved to external data.js file
+// var africanDishes = [ "Alloco", "Brik", "Claclo", "Dibi", "Eguisi", "FouFou", "Garri", "Hawawshi", "Injera", "Jollof", "Kedjenou", "Lafidi", "Mafe" ];
 
 
-var africanDishesDescription = africanDishes.flatMap((dish, index) => [
-    { id: index, name: dish },
-    { id: index, name: dish + "-D" }
-]);
+// var africanDishesDescription = africanDishes.flatMap((dish, index) => [
+//     { id: index, name: dish },
+//     { id: index, name: dish + "-D" }
+// ]);
 
 
 var randomDishIndex = Math.floor(Math.random() * africanDishes.length); //
@@ -187,6 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropZone = document.querySelector(".drop-1");
     const body = document.body;
     const levelTitle = document.getElementById("level-title");
+    const pElement = document.getElementById("funfact")
     let level = 1;
     let correctAnswer;
     let draggedItemOriginalParent = null; // Store original position
@@ -197,6 +202,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let newRandomIndex = Math.floor(Math.random() * africanDishes.length);
         correctAnswer = africanDishesDescription.filter(obj => obj.id === newRandomIndex);
         console.log (" correctAnswer " + correctAnswer[randomDescriptionAnswer].name);
+        funfact = africanDishesFunFacts[newRandomIndex].funFact 
+        console.log( " corretAnwser - funfacts = " + funfact );
+
 
         // Update question image
         document.querySelector(".drop-piece-1").setAttribute("src", `./images/img/${africanDishes[newRandomIndex]}-P.png`);
@@ -247,13 +255,17 @@ document.addEventListener("DOMContentLoaded", function () {
             audio.play();
             level++; // Increment by 1
             levelTitle.innerText = `CORRECT!!: Level ${level}`; // Update level title
+            pElement.innerText = `Fun Fact: ${funfact}`; // Update fun fact paragraph
+            console.log("paragraph element " + pElement.innerText);
 
             setTimeout(() => {
                 body.style.backgroundColor = "";
                 // resetGame(selectedItem);
                 resetGame();
                 loadNewQuestion();
-            }, 1000);
+                pElement.innerText = "Match names or defination of dishes with image at the left column above. ";
+                pElement.innerText = "Match names or defination of dishes with image at the left column above. ";
+            }, 3000);
         } else {
             body.style.backgroundColor = "pink"; // Red for incorrect
             var audio = new Audio("sound/wrong.mp3");
