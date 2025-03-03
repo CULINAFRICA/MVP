@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const music = document.getElementById('background-music');
 
     function playMusic() {
-        music.volume = 0.3; // play at 50% of computer volume
+        music.volume = 0.0; // play at 50% of computer volume
         music.loop = true; //ensure looping
         music.play().catch(error =>{
             console.log("Autoplay blocked by browser", error);
@@ -23,6 +23,7 @@ console.log( "funfacts = " + africanDishesFunFacts[2].funFact );
 
 var randomNumbers = [];
 var funfact = "";
+var funfactDishName = "";
 
 //commented out bacause data moved to external data.js file
 // var africanDishes = [ "Alloco", "Brik", "Claclo", "Dibi", "Eguisi", "FouFou", "Garri", "Hawawshi", "Injera", "Jollof", "Kedjenou", "Lafidi", "Mafe" ];
@@ -203,7 +204,8 @@ document.addEventListener("DOMContentLoaded", function () {
         correctAnswer = africanDishesDescription.filter(obj => obj.id === newRandomIndex);
         console.log (" correctAnswer " + correctAnswer[randomDescriptionAnswer].name);
         funfact = africanDishesFunFacts[newRandomIndex].funFact 
-        console.log( " corretAnwser - funfacts = " + funfact );
+        funfactDishName = africanDishesFunFacts[newRandomIndex].name; 
+        console.log( " corretAnwser - funfacts about " + funfactDishName + " : " + funfact );
 
 
         // Update question image
@@ -255,7 +257,8 @@ document.addEventListener("DOMContentLoaded", function () {
             audio.play();
             level++; // Increment by 1
             levelTitle.innerText = `CORRECT!!: Level ${level}`; // Update level title
-            pElement.innerText = `Fun Fact: ${funfact}`; // Update fun fact paragraph
+            pElement.innerText = `Faits amusants: ${funfact}`; // Update fun fact paragraph
+            pElement.classList.toggle("funfacts", true); // Update css class list
             console.log("paragraph element " + pElement.innerText);
 
             setTimeout(() => {
@@ -264,8 +267,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 resetGame();
                 loadNewQuestion();
                 pElement.innerText = "Match names or defination of dishes with image at the left column above. ";
-                pElement.innerText = "Match names or defination of dishes with image at the left column above. ";
-            }, 3000);
+                pElement.classList.toggle("funfacts", false); // Reset css class list
+            }, 5000);
         } else {
             body.style.backgroundColor = "pink"; // Red for incorrect
             var audio = new Audio("sound/wrong.mp3");

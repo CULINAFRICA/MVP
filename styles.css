@@ -44,6 +44,35 @@ p {
     font-size: 1.2rem;
 
 }
+
+#funfact  {
+    color: #9c6a0c;
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    font-size: 1.3rem;
+    animation-name: funfact;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes funfact {
+    0% {color:#9c920c;} 
+    25% {color:#142581;}
+    50% {color:#1e9f22;}
+    75% {color:#0c959c;}
+    100% {color:#9c6a0c;}
+}
+
+#funfacts{
+    color: #11030d;
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    font-size: 2.0rem;
+    width: 800px;
+    text-align: justify;
+    height: auto;
+}
+
 .square{
     width: 250px;
     height: 250px;
