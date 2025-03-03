@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const music = document.getElementById('background-music');
 
     function playMusic() {
-        music.volume = 0.0; // play at 50% of computer volume
+        music.volume = 0.4; // play at 50% of computer volume
         music.loop = true; //ensure looping
         music.play().catch(error =>{
             console.log("Autoplay blocked by browser", error);
