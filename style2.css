@@ -113,6 +113,15 @@ p {
  font-size: 1.09rem;
 }
 
+#funfact{
+    color: #11030d;
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 300px;
+    text-align: justify;
+    height: auto;
+}
 #culin-game-drag-zoom img {
 	height: 150px;
 	width: 150px;
