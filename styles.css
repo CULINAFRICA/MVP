@@ -7,6 +7,7 @@ body{
 	font-size: 14px;	
 	transform: scale(0.8);
 	transform-origin: top;
+    /* background-image: url('./images/background/1000_background.jpg'); */
 	
 }
 
@@ -49,7 +50,7 @@ p {
     color: #9c6a0c;
     font-family: Verdana, sans-serif;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     animation-name: funfact;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -63,7 +64,7 @@ p {
     100% {color:#9c6a0c;}
 }
 
-#funfacts{
+p.funfact#funfacts{
     color: #11030d;
     font-family: Verdana, sans-serif;
     text-align: center;
