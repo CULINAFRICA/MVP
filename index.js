@@ -10,13 +10,42 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Autoplay blocked by browser", error);
         });
     }
+
+    function pauseMusic(){
+        if (!music.paused){
+            music.pause();
+        }
+    }
     playMusic(); //Attempt autoplay
 
     //if autoplay is blocked, play when the user interacts with the page
     document.addEventListener("click", () => {
-        music.play();
+       if(music.paused) {
+        playMusic();
+    }
     }, {once:true});
+
+    //Pause musice when the user switches tab
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            pauseMusic();
+        } else {
+            playMusic();
+        }
+    });
+
+    //pause music when user clicks outside the window
+    window.addEventListener("blur", pauseMusic);
+
+    //resume music when user returns to the page
+    window.addEventListener("focus", playMusic);
+
 });
+
+
+
+
+
 
 console.log( "funfacts = " + africanDishesFunFacts[2].funFact );
 
@@ -192,7 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropZone = document.querySelector(".drop-1");
     const body = document.body;
     const levelTitle = document.getElementById("level-title");
-    const pElement = document.getElementById("funfact")
+    const pElement = document.querySelector(".funfact");
+    console.log ("pelement = " + pElement)
     let level = 1;
     let correctAnswer;
     let draggedItemOriginalParent = null; // Store original position
@@ -258,7 +288,12 @@ document.addEventListener("DOMContentLoaded", function () {
             level++; // Increment by 1
             levelTitle.innerText = `CORRECT!!: Level ${level}`; // Update level title
             pElement.innerText = `Faits amusants: ${funfact}`; // Update fun fact paragraph
-            pElement.classList.toggle("funfacts", true); // Update css class list
+            pElement.setAttribute ("id", "funfact");
+            
+
+            //add a border effect when the user gets the correct answer
+            dropZone.classList.add("correct-highlight");
+            // pElement.classList.toggle("#funfact", true); // Update css class list
             console.log("paragraph element " + pElement.innerText);
 
             setTimeout(() => {
@@ -267,7 +302,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 resetGame();
                 loadNewQuestion();
                 pElement.innerText = "Match names or defination of dishes with image at the left column above. ";
-                pElement.classList.toggle("funfacts", false); // Reset css class list
+                pElement.removeAttribute("id");
+                dropZone.classList.remove("correct-highlight");
+                // pElement.classList.toggle("#funfact", false); // Reset css class list
             }, 5000);
         } else {
             body.style.backgroundColor = "pink"; // Red for incorrect
