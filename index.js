@@ -292,7 +292,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
 
             //add a border effect when the user gets the correct answer
-            dropZone.classList.add("correct-highlight");
+            dropZone.classList.add("correct-highlight", "drop-1-after");
             // pElement.classList.toggle("#funfact", true); // Update css class list
             console.log("paragraph element " + pElement.innerText);
 
@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 loadNewQuestion();
                 pElement.innerText = "Match names or defination of dishes with image at the left column above. ";
                 pElement.removeAttribute("id");
-                dropZone.classList.remove("correct-highlight");
+                dropZone.classList.remove("correct-highlight", "drop-1-after");
                 // pElement.classList.toggle("#funfact", false); // Reset css class list
             }, 5000);
         } else {
