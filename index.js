@@ -1,4 +1,4 @@
-import { africanDishes, africanDishesDescription, africanDishesFunFacts} from "./data.js";
+import { africanDishes, africanDishesDescription, africanDishesFunFacts, africanDishesEnglish, africanDishesFrench} from "./data.js";
 
 document.addEventListener('DOMContentLoaded', function() {
     const music = document.getElementById('background-music');
@@ -41,11 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener("focus", playMusic);
 
 });
-
-
-
-
-
 
 console.log( "funfacts = " + africanDishesFunFacts[2].funFact );
 
