@@ -1,8 +1,8 @@
 body{
     display : flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     /* align-items: center; */
-    min-height : 100vw;
     flex-direction: column;
 	font-size: 16px;	
 	transform: scale(0.8);
@@ -11,7 +11,7 @@ body{
 
 	font-family: 'Comic Sans Ms' cursive, sans-serif;
 	background-color: #ffeb3b;
-	height: 100vh;
+	/* height: 100vh; */
 	width: 100%;
 	padding: 0;
 	margin: 0;
@@ -43,9 +43,16 @@ a {
 
 header {
     /* background-color: #f2f2f2; */
-    display: flex;
+    /* display: flex; */
+    width: 100%;
+    /* background-color: #fff ; */
     height: 150px;
-    padding: 0px 0;
+    padding: 10px 0;
+    box-shadow: 0px, 4px, 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -54,26 +61,31 @@ header {
 }
 
 .logo img {
-    width: 300px;
     height: 150px;
+    width: auto;
+
 }
 
 nav {
-    width: 90%;
-    margin: 0 auto;
     display: flex;
+    margin: 0 auto;
     justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .lang-menu {
-    margin-top: 45px;
+    /* margin-top: 45px; */
     position: relative;
+    
 }
 
 .lang-menu ul {
     margin: 0;
     padding: 0;
-    background-color: beige;
+    /* background-color: beige; */
     border: 1px solid #f8f8f8;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -112,12 +124,13 @@ nav {
     display: block;
 }
 
-.selected-lang {
+.lang-menu .selected-lang {
     cursor: pointer;
     display: flex;
+    border-radius: 5px;
     justify-content: space-between;
     line-height: 2.5;
-    width: 78px;
+    width: 85px;
 }
 
 .selected-lang::before {
@@ -143,7 +156,7 @@ img {
 }
 
 
-.container {
+/* .container {
 	display: flex;
 	flex-direction: column;
 	height: auto;
@@ -152,8 +165,17 @@ img {
 	box-sizing: border-box;
     text-align: center;
     align-items: center;
-}
+} */
 
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
 
 #level-title {
     font-family: 'Press Start 2P', cursive;
@@ -224,7 +246,7 @@ p {
 .drop{
     /* background-color: beige; */
     border: 20px;
-    padding: 0px;
+    padding: 5px;
 }
 
 .drag{

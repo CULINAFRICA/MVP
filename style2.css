@@ -41,6 +41,12 @@
 	
 }
 
+#culin-game-drag{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+}
 
 .drag-piece-1, .drag-piece-2, .drag-piece-3, .drag-piece-4 {
 	background-color: #f4a460;
@@ -54,6 +60,8 @@
 	opacity: 1;
 	overflow: hidden;
 	transition: tranform 0.3s ease-in-out, z-index 0.3s;
+	display: inline-block !important;
+	vertical-align: top;
 }
 
 
@@ -63,81 +71,75 @@
 		margin-bottom: 30px;
 	}
 
-	.container {
+	#container {
        display: flex;
 	   flex-direction: column;
 
 	   align-items: center;
-
 	}
- 
 	
-.game-area {
-    display: flex;
-	flex-direction: column;
+	.game-area {
+		display: flex;
+		flex-direction: column;
 
-	align-items: center;
-}
+		align-items: center;
+	}
 
-.drop-1 {
-	width: 90%;
-	max-width: 200px;
-	height: auto;
-	padding: 10px;
-}
+	.drop-1 {
+		width: 90%;
+		max-width: 200px;
+		height: auto;
+		padding: 10px;
+	}
 
-.drop-1-after {
-    background-color: beige;
-    width: 100%;
-    max-width: 200px;
-    padding: 1px;
-    border-radius: 5%;
-}
+	.drop-1-after {
+		background-color: beige;
+		width: 100%;
+		max-width: 200px;
+		padding: 1px;
+		border-radius: 5%;
+	}
 
-.square {
-	display: flex;
-	height: 150px;
-	width: 140px;
-	flex: 1 1 calc(50%-10%);
-	justify-items:center;
-	margin: 2px;
-}
+	.square {
+		display: flex;
+		height: 150px;
+		width: 140px;
+		flex: 1 1 calc(50%-10%);
+		justify-items:center;
+		margin: 2px;
+	}
 
-.square img {
-	width: 150px;
-	height: auto;
-}
+	.square img {
+		width: 150px;
+		height: auto;
+	}
 
-#culin-game-drag-zoom {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap:30px;
-	max-width: 660px;
-
-}
-
-
-p {
- margin-top: 2px;
- font-size: 1.09rem;
-}
-
-#funfact{
-    color: #11030d;
-    font-family: Verdana, sans-serif;
-    text-align: center;
-    font-size: 1.1rem;
-    width: 90%;
-	max-width: 280px;
-    text-align: justify;
-    height: auto;
-}
-#culin-game-drag-zoom img {
-	height: 150px;
-	width: 150px;
-}
+	#culin-game-drag-zoom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap:30px;
+		max-width: 660px;
+	}
 
 
+	p {
+	margin-top: 2px;
+	font-size: 1.09rem;
+	}
 
+	#funfact{
+		color: #11030d;
+		font-family: Verdana, sans-serif;
+		text-align: center;
+		font-size: 1.1rem;
+		width: 90%;
+		max-width: 280px;
+		text-align: justify;
+		height: auto;
+	}
+	#culin-game-drag-zoom img {
+		height: 150px;
+		width: 150px;
+	}
 }
