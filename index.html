@@ -9,16 +9,33 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet"/>
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#"><img src="./images/CulinAfrica.svg"/> </a>
+                
+            </div>
+            <div class="lang-menu">
+                <div class="selected-lang">
+                    English
+                </div>
+                <ul>
+                    <li><a href="#" class="ca"> English</a></li>
+                    <li><a href="#" class="fr">French</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
   <h1 id="level-title">Play Culin African Game</h1>
 
   <audio id="background-music" src="sound/background.mp3" loop> </audio>
 
-  <label for="languageSelect">Choose Language:</label>
-  <select id="languageSelect">
+  <!-- <label class="label" for="languageSelect">Choose Language:</label>
+  <select id="languageSelect" class="dropdown">
       <option value="en">English</option>
       <option value="fr">Français</option>
-  </select>
+  </select> -->
 
 <div id="container" class="game-area">
     <!-- <h1 id="level-title">Play Culin African Game</h1> -->

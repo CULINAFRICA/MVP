@@ -1,13 +1,3 @@
-bodY {
-	display: flex;
-	margin: 0;
-	padding: 0;
-	height: 100vh;
-	width: 100%;
-	font-family: 'Comic Sans Ms' cursive, sans-serif;
-	background-color: #ffeb3b;
-	overflow: hidden;
-}
 
 .game-area {
 	display: flex;
