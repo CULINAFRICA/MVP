@@ -367,11 +367,62 @@
 	}
 
 	.logo img {
+		padding-top: 10px;
 		height: 100px;
 		width: 100px;
 	
 	}
+	
+	.lang-menu ul li a:before{
+		width: 24px;
+		height: 24px;
+		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
+	}
+	.selected-lang::before {
+		content: "";
+		display: block;
+		width: 24px;
+		height: 24px;
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+
+	.lang-menu {
+		margin-top: 30px;
+		position: relative;
+		width: 40px;
+		
+	}
+
+	.lang-menu .selected-lang {
+		line-height: 1.6;
+		width: 72px;
+	}
+	.lang-menu ul {
+		top:25px;
+	}
+	
+	.lang-menu ul li a {
+		width: 90px;
+		height: 25px;
+		font-size: 12px;
+		padding: 2px 2px;
+
+		
+	}
+	
+	.ca:before {
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+	.fr:before {
+		background-image: url("https://flagsapi.com/FR/shiny/24.png");
+	}
+	header {
+		width: 80%;
+		height: 100px;
+	}
 }
+
+
 
 
 
@@ -432,10 +483,14 @@
 		max-width: 660px;
 	}
 
-
 	p {
-	margin-top: 2px;
-	font-size: 0.55rem;
+		margin-top: 2px;
+		font-size: 0.55rem;
+		}
+
+	#container > p {
+	margin-top: 15px;
+	font-size: 0.77rem;
 	}
 
 	#funfact{
@@ -460,12 +515,8 @@
 	
 	}
 	.lang-menu ul li a:before{
-		content: "";
-		display: inline-block;
 		width: 24px;
 		height: 24px;
-		vertical-align: middle;
-		margin-right: 10px;
 		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
 	}
 	.selected-lang::before {
@@ -476,10 +527,29 @@
 		background-image: url("https://flagsapi.com/CA/shiny/24.png");
 	}
 
+	.lang-menu {
+		margin-top: 30px;
+		position: relative;
+		width: 40px;
+		
+	}
+
 	.lang-menu .selected-lang {
 		line-height: 1.6;
+		width: 72px;
+	}
+	.lang-menu ul {
+		top:25px;
 	}
 	
+	.lang-menu ul li a {
+		width: 90px;
+		height: 25px;
+		font-size: 12px;
+		padding: 2px 2px;
+
+		
+	}
 	
 	.ca:before {
 		background-image: url("https://flagsapi.com/CA/shiny/24.png");
@@ -487,5 +557,8 @@
 	.fr:before {
 		background-image: url("https://flagsapi.com/FR/shiny/24.png");
 	}
-	
+	header {
+		width: 80%;
+		height: 100px;
+	}
 }
