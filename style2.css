@@ -365,6 +365,12 @@
 		height: 150px;
 		width: 150px;
 	}
+
+	.logo img {
+		height: 100px;
+		width: 100px;
+	
+	}
 }
 
 
@@ -414,8 +420,8 @@
 	}
 
 	.square img {
-		width: 80px;
-		height: 80px;
+		width: 85px;
+		height: 85px;
 	}
 
 	#culin-game-drag-zoom {
@@ -446,4 +452,40 @@
 		height: 100px;
 		width: 100px;
 	}
+
+	.logo img {
+		padding-top: 10px;
+		height: 95px;
+		width: 95px;
+	
+	}
+	.lang-menu ul li a:before{
+		content: "";
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		vertical-align: middle;
+		margin-right: 10px;
+		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
+	}
+	.selected-lang::before {
+		content: "";
+		display: block;
+		width: 24px;
+		height: 24px;
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+
+	.lang-menu .selected-lang {
+		line-height: 1.6;
+	}
+	
+	
+	.ca:before {
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+	.fr:before {
+		background-image: url("https://flagsapi.com/FR/shiny/24.png");
+	}
+	
 }
