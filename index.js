@@ -222,7 +222,29 @@ document.addEventListener("DOMContentLoaded", function () {
     let correctAnswer;
     let draggedItemOriginalParent = null; // Store original position
 
+
+    const langMenu = document.querySelector(".lang-menu");
+    let currentLanguage = "english";
+
+    function updateLanguage(newLang) {
+        currentLanguage = newLang;
+        loadNewQuestion();
+    }
+
+    langMenu.addEventListener("click", function(event){
+        if(event.target.classList.contains("ca")) {
+            updateLanguage("english");
+        } else if (event.target.classList.contains(fr)) {
+            updateLanguage("french");
+        }
+    });
+
+    function getDishesByLanguage() {
+        return currentLanguage === "english" ? africanDishesEnglish : africanDishesFrench;
+    }
+
     function loadNewQuestion() {
+        let dishData = getDishesByLanguage();
         var randomDescriptionAnswer = Math.floor(Math.random() * 2); //
 
         let newRandomIndex = Math.floor(Math.random() * africanDishes.length);
