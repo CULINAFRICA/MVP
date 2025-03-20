@@ -350,6 +350,7 @@ footer {
     bottom: 0;
     left: 0;
     z-index: 1000;
+    
 
 }
 
@@ -361,6 +362,7 @@ footer {
     text-align: center;
     border-radius: 70px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .social-links a {

@@ -139,6 +139,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let level = 1;
     let correctAnswer;
     let draggedItemOriginalParent = null; // Store original position
+    let footerContainer = document.querySelector(".footer-container");
+    let footer = document.querySelector("footer");
+
 
 
     const langMenu = document.querySelector(".lang-menu");
@@ -229,6 +232,9 @@ document.addEventListener("DOMContentLoaded", function () {
             levelTitle.innerText = `CORRECT!!: Level ${level}`; // Update level title
             pElement.innerText = `Faits amusants: ${funfact}`; // Update fun fact paragraph
             pElement.setAttribute ("id", "funfact");
+
+            footer.style.backgroundColor="rgb(0,255,0)";
+            footerContainer.style.backgroundColor="rgb(0,255,0)";
             
 
             //add a border effect when the user gets the correct answer
@@ -238,6 +244,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             setTimeout(() => {
                 body.style.backgroundColor = "";
+                footer.style.backgroundColor="";
+                footerContainer.style.backgroundColor="";
                 // resetGame(selectedItem);
                 resetGame();
                 loadNewQuestion();
@@ -248,12 +256,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 5000);
         } else {
             body.style.backgroundColor = "pink"; // Red for incorrect
+            footer.style.backgroundColor="pink";
+            footerContainer.style.backgroundColor="pink";
             var audio = new Audio("sound/wrong.mp3");
             audio.play();
             levelTitle.innerText = "Wrong Answer: Game Over";
 
             setTimeout(() => {
                 body.style.backgroundColor = "";
+                footer.style.backgroundColor="";
+                footerContainer.style.backgroundColor="";
                 level = 1; // Reset level
                 levelTitle.innerText = "Level 1";
                 window.location.reload(); // Restart game
