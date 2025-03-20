@@ -23,7 +23,6 @@ export const africanDishesFrench = africanDishes.flatMap((dish, index) => [
     { id: index, name: dish },
     { id: index, name: dish + "_fr" }
 ]);
-african
 
 
 export const africanDishesFunFacts = [
