@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         funfact = africanDishesFunFacts[newRandomIndex].funFact 
         funfactDishName = africanDishesFunFacts[newRandomIndex].name; 
-        console.log( " corretAnwser - funfacts about " + funfactDishName + " : " + funfact );
+        // console.log( " corretAnwser - funfacts about " + funfactDishName + " : " + funfact );
 
 
         // Update question image
