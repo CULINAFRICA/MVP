@@ -908,8 +908,8 @@
 
 	.square {
 		display: flex;
-		height: 80px;
-		width: 80px;
+		height: 90px;
+		width: 88px;
 		flex: 1 1 calc(50%-10%);
 		justify-items:center;
 		margin: 2px;
