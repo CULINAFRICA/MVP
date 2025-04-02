@@ -1,5 +1,10 @@
 import { africanDishes, africanDishesDescription, africanDishesFunFacts, africanDishesEnglish, africanDishesFrench} from "./data.js";
 
+app.listen(port, ()=>{
+    console.log(`server running on port ${port}`);
+})
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const music = document.getElementById('background-music');
 

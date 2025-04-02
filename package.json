@@ -1,0 +1,24 @@
+{
+  "name": "culinafricaa",
+  "version": "1.0.0",
+  "description": "A game where users associate images of African dishes with their names or definitions, emphasizing African culinary diversity and culture.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geedino07/culinafricaa.git"
+  },
+  "author": "Gerald Okeke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geedino07/culinafricaa/issues"
+  },
+  "homepage": "https://github.com/geedino07/culinafricaa#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  }
+}
