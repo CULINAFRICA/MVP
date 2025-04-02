@@ -140,7 +140,21 @@ nav {
     height: 32px;
     background-image: url("https://flagsapi.com/CA/shiny/32.png");
 }
+.ca-flag::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("https://flagsapi.com/CA/shiny/32.png");
+}
 
+.fr-flag::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("https://flagsapi.com/FR/shiny/32.png");
+}
 .ca:before {
     background-image: url("https://flagsapi.com/CA/shiny/32.png");
 }

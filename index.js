@@ -141,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let draggedItemOriginalParent = null; // Store original position
     let footerContainer = document.querySelector(".footer-container");
     let footer = document.querySelector("footer");
+    let lang = document.querySelector(".selected-lang");
 
 
 
@@ -149,21 +150,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateLanguage(newLang) {
         currentLanguage = newLang;
+        console.log ("language selected: " + currentLanguage );
         loadNewQuestion();
+
+        lang.innerHTML = currentLanguage === "english" ? "English" : "French"
+
+        //Toggle classes for flag updates
+
+        if (currentLanguage === "english") {
+            lang.classList.remove("fr-flag");
+            lang.classList.add("ca-flag");
+        } else {
+            lang.classList.remove("ca-flag");
+            lang.classList.add("fr-flag");
+        }
     }
 
     langMenu.addEventListener("click", function(event){
         if(event.target.classList.contains("ca")) {
             updateLanguage("english");
+            lang.innerHTML="English";
+            // console.log("languageeee: "+ lang.innerText);
         } else if (event.target.classList.contains("fr")) {
             updateLanguage("french");
+            lang.innerHTML="French";
+            // console.log("languageeee: " +lang.innerText);
+
         }
     });
 
     function getDishesByLanguage() {
         return currentLanguage === "english" ? africanDishesEnglish : africanDishesFrench;
     }
-    console.log(getDishesByLanguage());
+    // console.log("get Dishes by Language " + getDishesByLanguage());
 
     function loadNewQuestion() {
         let dishData = getDishesByLanguage();

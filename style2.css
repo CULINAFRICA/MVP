@@ -383,13 +383,21 @@
 		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
 	}
 	.selected-lang::before {
-		content: "";
-		display: block;
 		width: 24px;
 		height: 24px;
 		background-image: url("https://flagsapi.com/CA/shiny/24.png");
 	}
-
+	.ca-flag::before {
+		width: 24px;
+		height: 24px;
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+	
+	.fr-flag::before {
+		width: 24px;
+		height: 24px;
+		background-image: url("https://flagsapi.com/FR/shiny/24.png");
+	}
 	.lang-menu {
 		margin-top: 30px;
 		position: relative;
@@ -525,13 +533,6 @@
 		width: 24px;
 		height: 24px;
 		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
-	}
-	.selected-lang::before {
-		content: "";
-		display: block;
-		width: 24px;
-		height: 24px;
-		background-image: url("https://flagsapi.com/CA/shiny/24.png");
 	}
 
 	.lang-menu {
@@ -673,13 +674,7 @@
 		height: 24px;
 		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
 	}
-	.selected-lang::before {
-		content: "";
-		display: block;
-		width: 24px;
-		height: 24px;
-		background-image: url("https://flagsapi.com/CA/shiny/24.png");
-	}
+	
 
 	.lang-menu {
 		margin-top: 30px;
@@ -817,13 +812,6 @@
 		width: 24px;
 		height: 24px;
 		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
-	}
-	.selected-lang::before {
-		content: "";
-		display: block;
-		width: 24px;
-		height: 24px;
-		background-image: url("https://flagsapi.com/CA/shiny/24.png");
 	}
 
 	.lang-menu {
@@ -964,13 +952,6 @@
 		width: 24px;
 		height: 24px;
 		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
-	}
-	.selected-lang::before {
-		content: "";
-		display: block;
-		width: 24px;
-		height: 24px;
-		background-image: url("https://flagsapi.com/CA/shiny/24.png");
 	}
 
 	.lang-menu {
