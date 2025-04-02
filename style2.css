@@ -407,20 +407,19 @@
 
 	.lang-menu .selected-lang {
 		line-height: 1.6;
-		width: 72px;
+		width: 75px;
 	}
 	.lang-menu ul {
 		top:25px;
 	}
 	
 	.lang-menu ul li a {
-		width: 90px;
+		width: 85px;
 		height: 25px;
-		font-size: 12px;
-		padding: 2px 2px;
-
-		
+		font-size: 14px;
+		padding: 3px 1px;
 	}
+	
 	
 	.ca:before {
 		background-image: url("https://flagsapi.com/CA/shiny/24.png");
@@ -544,20 +543,19 @@
 
 	.lang-menu .selected-lang {
 		line-height: 1.6;
-		width: 72px;
+		width: 75px;
 	}
 	.lang-menu ul {
 		top:25px;
 	}
 	
 	.lang-menu ul li a {
-		width: 90px;
+		width: 85px;
 		height: 25px;
-		font-size: 12px;
-		padding: 2px 2px;
-
-		
+		font-size: 14px;
+		padding: 3px 1px;
 	}
+	
 	
 	.ca:before {
 		background-image: url("https://flagsapi.com/CA/shiny/24.png");
@@ -685,20 +683,21 @@
 
 	.lang-menu .selected-lang {
 		line-height: 1.6;
-		width: 72px;
+		width: 75px;
 	}
 	.lang-menu ul {
 		top:25px;
 	}
 	
 	.lang-menu ul li a {
-		width: 90px;
+		width: 85px;
 		height: 25px;
-		font-size: 12px;
-		padding: 2px 2px;
+		font-size: 14px;
+		padding: 3px 1px;
 
 		
 	}
+	
 	
 	.ca:before {
 		background-image: url("https://flagsapi.com/CA/shiny/24.png");
@@ -823,17 +822,17 @@
 
 	.lang-menu .selected-lang {
 		line-height: 1.6;
-		width: 72px;
+		width: 75px;
 	}
 	.lang-menu ul {
 		top:25px;
 	}
 	
 	.lang-menu ul li a {
-		width: 90px;
+		width: 85px;
 		height: 25px;
-		font-size: 12px;
-		padding: 2px 2px;
+		font-size: 14px;
+		padding: 3px 1px;
 
 		
 	}
@@ -963,19 +962,17 @@
 
 	.lang-menu .selected-lang {
 		line-height: 1.6;
-		width: 72px;
+		width: 75px;
 	}
 	.lang-menu ul {
 		top:25px;
 	}
 	
 	.lang-menu ul li a {
-		width: 90px;
+		width: 85px;
 		height: 25px;
-		font-size: 12px;
-		padding: 2px 2px;
-
-		
+		font-size: 14px;
+		padding: 3px 1px;
 	}
 	
 	.ca:before {
