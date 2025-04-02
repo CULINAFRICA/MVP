@@ -418,6 +418,7 @@
 		height: 25px;
 		font-size: 14px;
 		padding: 3px 1px;
+
 	}
 	
 	
@@ -690,10 +691,10 @@
 	}
 	
 	.lang-menu ul li a {
-		width: 85px;
+		width: 80px;
 		height: 25px;
-		font-size: 14px;
-		padding: 3px 1px;
+		font-size: 12px;
+		padding: 2px 2px;
 
 		
 	}
@@ -829,10 +830,10 @@
 	}
 	
 	.lang-menu ul li a {
-		width: 85px;
+		width: 80px;
 		height: 25px;
-		font-size: 14px;
-		padding: 3px 1px;
+		font-size: 12px;
+		padding: 2px 2px;
 
 		
 	}
@@ -969,10 +970,10 @@
 	}
 	
 	.lang-menu ul li a {
-		width: 85px;
+		width: 80px;
 		height: 25px;
-		font-size: 14px;
-		padding: 3px 1px;
+		font-size: 12px;
+		padding: 2px 2px;
 	}
 	
 	.ca:before {
