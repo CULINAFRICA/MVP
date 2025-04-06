@@ -1,0 +1,989 @@
+
+.game-area {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	padding-top: 5px;
+	margin-top: 0;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+}
+	
+.culin-game-title {
+	text-align: center;
+	padding-top: 20px;
+	background-color: #ff6f61;
+    border-radius: 15px;
+	color: #fff;
+	font-size: 2em;
+}
+
+#culin-game-drop, .culin-game-drag-zoom {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	
+	
+}
+
+
+.drop-piece-1 {
+	width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    border-radius: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+	
+}
+
+
+.drop-piece-1 {
+	width: 300px;
+	height: 250px;
+	background-color: rgba(255, 255, 255, 0.5);
+	display: flex;
+	border-radius: 10px;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+	
+}
+
+#culin-game-drag{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+}
+
+.drag-piece-1, .drag-piece-2, .drag-piece-3, .drag-piece-4 {
+	background-color: #f4a460;
+	margin: 0px;
+	padding:0px;
+	border: 5px;
+	border-radius: 10px;
+	cursor: pointer;
+	color: #fff;
+	transform: scale(1);
+	opacity: 1;
+	overflow: hidden;
+	transition: tranform 0.3s ease-in-out, z-index 0.3s;
+	display: inline-block !important;
+	vertical-align: top;
+}
+
+
+@media (max-width: 1284px){
+    #level-title {
+		font-size:2.5rem;
+		margin-bottom: 30px;
+	}
+
+	
+	.game-area {
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+	}
+
+	.drop-1 {
+		max-width: 200px;
+		padding: 20px;
+		height: 240px;
+		width: 240px;
+		/* padding: 10px; */
+
+	}
+
+	.drop-1-after {
+		background-color: beige;
+		width: 100%;
+		height: 100%;
+		max-width: 200px;
+		padding: 1px;
+		border-radius: 5%;
+	}
+
+	.square {
+		/* display: flex; */
+		height: 182px;
+		width: 182px;
+		flex: 1 1 calc(50%-10%);
+		justify-items:center;
+		margin: 1px;
+	}
+
+	.square img {
+		width: 180px;
+		height: 180px;
+	}
+
+	#culin-game-drag-zoom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap:3px;
+		max-width: 1284px;
+	}
+
+
+	p {
+	margin-top: 2px;
+	font-size: 1.09rem;
+	}
+
+	#funfact{
+		color: #11030d;
+		font-family: Verdana, sans-serif;
+		text-align: center;
+		font-size: 1.1rem;
+		width: 90%;
+		max-width: 660px;
+		text-align: justify;
+		height: auto;
+	}
+	#culin-game-drag-zoom img {
+		height: 185px;
+		width: 185px;
+	}
+}
+
+
+@media (max-width: 1024px){
+    #level-title {
+		font-size:2.3rem;
+		margin-bottom: 30px;
+	}
+
+	
+	.game-area {
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+	}
+
+	.drop-1-after {
+		background-color: beige;
+		width: 100%;
+		max-width: 200px;
+		padding: 1px;
+		border-radius: 5%;
+	}
+
+	.square {
+		/* display: flex; */
+		height: 150px;
+		width: 150px;
+		flex: 1 1 calc(50%-10%);
+		justify-items:center;
+		margin: 2px;
+	}
+
+	.square img {
+		width: 150px;
+		height: 150px;
+	}
+
+	#culin-game-drag-zoom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap:30px;
+		max-width: 660px;
+	}
+
+
+	p {
+	margin-top: 10px;
+	font-size: 1.00rem;
+	}
+
+	#funfact{
+		color: #11030d;
+		font-family: Verdana, sans-serif;
+		text-align: center;
+		font-size: 1.1rem;
+		width: 90%;
+		max-width: 600px;
+		text-align: justify;
+		height: auto;
+	}
+	#culin-game-drag-zoom img {
+		height: 150px;
+		width: 150px;
+	}
+}
+
+
+
+@media (max-width: 768px){
+    #level-title {
+		font-size:1.9rem;
+		margin-bottom: 30px;
+	}
+	
+	.game-area {
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+	}
+
+	.drop-1-after {
+		background-color: beige;
+		width: 100%;
+		max-width: 200px;
+		padding: 1px;
+		border-radius: 5%;
+	}
+
+	.square {
+		/* display: flex; */
+		height: 130px;
+		width: 130px;
+		flex: 1 1 calc(50%-10%);
+		justify-items:center;
+		margin: 2px;
+	}
+
+	.square img {
+		width: 130px;
+		height: 130px;
+	}
+
+	#culin-game-drag-zoom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap:30px;
+		max-width: 660px;
+	}
+
+
+	p {
+	margin-top: 2px;
+	font-size: 0.86rem;
+	}
+
+	#funfact{
+		color: #11030d;
+		font-family: Verdana, sans-serif;
+		text-align: center;
+		font-size: 1.1rem;
+		width: 90%;
+		max-width: 450px;
+		text-align: justify;
+		height: auto;
+	}
+	#culin-game-drag-zoom img {
+		height: 150px;
+		width: 150px;
+	}
+}
+
+
+
+@media (max-width: 660px){
+    #level-title {
+		font-size:1.7rem;
+		margin-bottom: 30px;
+	}
+	
+	.game-area {
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+	}
+	.drop-piece-1 {
+		width: 200px;
+		height: 200px;
+	}
+
+	img {
+		height: 160px;
+		width: 160px;
+	}
+	.drop-1-after {
+		background-color: beige;
+		width: 100%;
+		height: 100%;
+		padding: 1px;
+		border-radius: 5%;
+	}
+	.drop-1 {
+		max-width: 200px;
+		padding: 10px;
+		height: 180px;
+		width: 180px;
+		/* padding: 10px; */
+
+	}
+	.square {
+		/* display: flex; */
+		height: 100px;
+		width: 100px;
+		flex: 1 1 calc(50%-10%);
+		justify-items:center;
+		margin: 2px;
+	}
+
+	.square img {
+        width: 119px;
+        height: 120px;
+    }
+	
+	#culin-game-drag-zoom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap:30px;
+		max-width: 550px;
+	}
+
+
+	p {
+	margin-top: 2px;
+	font-size: .68rem;
+	}
+
+	#funfact{
+		color: #11030d;
+		font-family: Verdana, sans-serif;
+		text-align: center;
+		font-size: 0.8rem;
+		width: 90%;
+		max-width: 400px;
+		text-align: justify;
+		height: auto;
+	}
+	#culin-game-drag-zoom img {
+		height: 150px;
+		width: 150px;
+	}
+
+	.logo img {
+		padding-top: 10px;
+		height: 100px;
+		width: 100px;
+	
+	}
+	
+	.lang-menu ul li a:before{
+		width: 24px;
+		height: 24px;
+		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
+	}
+	.selected-lang::before {
+		width: 24px;
+		height: 24px;
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+	.ca-flag::before {
+		width: 24px;
+		height: 24px;
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+	
+	.fr-flag::before {
+		width: 24px;
+		height: 24px;
+		background-image: url("https://flagsapi.com/FR/shiny/24.png");
+	}
+	.lang-menu {
+		margin-top: 30px;
+		position: relative;
+		width: 40px;
+		
+	}
+
+	.lang-menu .selected-lang {
+		line-height: 1.6;
+		width: 78px;
+	}
+	.lang-menu ul {
+		top:25px;
+	}
+	
+	.lang-menu ul li a {
+		width: 85px;
+		height: 25px;
+		font-size: 14px;
+		padding: 2px 2px;
+
+	}
+	
+	
+	.ca:before {
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+	.fr:before {
+		background-image: url("https://flagsapi.com/FR/shiny/24.png");
+	}
+	header {
+		width: 80%;
+		height: 100px;
+	}
+}
+
+
+
+
+
+@media (max-width: 480px){
+    #level-title {
+		font-size:1.5rem;
+		margin-bottom: 30px;
+	}
+	
+	
+	.game-area {
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+	}
+
+	.drop-piece-1{
+		height: 160px;
+		width: 160px;
+	}
+
+	img {
+		height: 120px;
+		width: 120px;
+	}
+	.drop-1 {
+		max-width: 140px;
+		padding: 10px;
+		height: 140px;
+		width: 140px;
+	}
+
+	.drop-1-after {
+		background-color: beige;
+		width: 100%;
+		height: 100%;
+		padding: 1px;
+		border-radius: 5%;
+	}
+
+	.square {
+		/* display: flex; */
+		height: 88px;
+		width: 88px;
+		flex: 1 1 calc(50%-10%);
+		justify-items:center;
+		margin: 2px;
+	}
+
+	.square img {
+		width: 88px;
+		height: 88px;
+	}
+
+	#culin-game-drag-zoom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap:30px;
+		max-width: 660px;
+	}
+
+	p {
+		margin-top: 2px;
+		font-size: 0.67rem;
+		}
+
+	#container > p {
+	margin-top: 15px;
+	font-size: 0.65rem;
+	}
+
+	#funfact{
+		color: #11030d;
+		font-family: Verdana, sans-serif;
+		text-align: center;
+		font-size: 0.65rem;
+		width: 90%;
+		max-width: 350px;
+		text-align: justify;
+		height: auto;
+	}
+	#culin-game-drag-zoom img {
+		height: 100px;
+		width: 100px;
+	}
+
+	.logo img {
+		padding-top: 10px;
+		height: 95px;
+		width: 95px;
+	
+	}
+	.lang-menu ul li a:before{
+		width: 24px;
+		height: 24px;
+		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
+	}
+
+	.lang-menu {
+		margin-top: 30px;
+		position: relative;
+		width: 40px;
+		
+	}
+
+	.lang-menu .selected-lang {
+		line-height: 1.6;
+		width: 78px;
+	}
+	.lang-menu ul {
+		top:25px;
+	}
+	
+	.lang-menu ul li a {
+		width: 85px;
+		height: 25px;
+		font-size: 12px;
+		padding: 3px 1px;
+	}
+	
+	
+	.ca:before {
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+	.fr:before {
+		background-image: url("https://flagsapi.com/FR/shiny/24.png");
+	}
+	header {
+		width: 80%;
+		height: 100px;
+	}
+}
+
+
+
+@media (max-width: 430px){
+    #level-title {
+		font-size:1.5rem;
+		margin-bottom: 30px;
+	}
+
+	/* #container {
+       display: flex;
+	   flex-direction: column;
+
+	   align-items: center;
+	} */
+	
+	.game-area {
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+	}
+
+	.drop-1 {
+		max-width: 200px;
+		padding: 10px;
+		height: 120px;
+		width: 120px;
+		/* padding: 10px; */
+
+	}
+
+	.drop-1-after {
+		background-color: beige;
+		width: 100%;
+		height: 100%;
+		max-width: 120px;
+		padding: 1px;
+		border-radius: 5%;
+	}
+
+	.square {
+		/* display: flex; */
+		height: 85px;
+		width: 85px;
+		flex: 1 1 calc(50%-10%);
+		justify-items:center;
+		margin: 2px;
+	}
+
+	img {
+		height: 105px;
+		width: 105px;
+	}
+
+	.square img {
+		width: 88px;
+		height: 88px;
+	}
+
+	#culin-game-drag-zoom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap:30px;
+		max-width: 660px;
+	}
+
+	p {
+		margin-top: 2px;
+		font-size: 0.55rem;
+		}
+
+	#container > p {
+	margin-top: 15px;
+	font-size: 0.65rem;
+	}
+
+	#funfact{
+		color: #11030d;
+		font-family: Verdana, sans-serif;
+		text-align: center;
+		font-size: 0.65rem;
+		width: 90%;
+		max-width: 320px;
+		text-align: justify;
+		height: auto;
+	}
+	#culin-game-drag-zoom img {
+		height: 100px;
+		width: 100px;
+	}
+
+	.logo img {
+		padding-top: 10px;
+		height: 95px;
+		width: 95px;
+	
+	}
+	.lang-menu ul li a:before{
+		width: 24px;
+		height: 24px;
+		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
+	}
+	
+
+	.lang-menu {
+		margin-top: 30px;
+		position: relative;
+		width: 40px;
+		
+	}
+
+	.lang-menu .selected-lang {
+		line-height: 1.6;
+		width: 78px;
+	}
+	.lang-menu ul {
+		top:25px;
+	}
+	
+	.lang-menu ul li a {
+		width: 85px;
+		height: 25px;
+		font-size: 12px;
+		padding: 2px 2px;
+
+		
+	}
+	
+	
+	.ca:before {
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+	.fr:before {
+		background-image: url("https://flagsapi.com/FR/shiny/24.png");
+	}
+	header {
+		width: 80%;
+		height: 100px;
+	}
+}
+
+
+
+
+
+
+@media (max-width: 380px){
+    #level-title {
+		font-size:1.5rem;
+		margin-bottom: 30px;
+	}
+
+	.game-area {
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+	}
+
+	.drop-1 {
+		max-width: 200px;
+		padding: 10px;
+		height: 120px;
+		width: 120px;
+		/* padding: 10px; */
+
+	}
+
+	.drop-1-after {
+		background-color: beige;
+		width: 100%;
+		height: 100%;
+		max-width: 120px;
+		padding: 1px;
+		border-radius: 5%;
+	}
+
+	.square {
+		/* display: flex; */
+		height: 80px;
+		width: 78px;
+		flex: 1 1 calc(50%-10%);
+		justify-items:center;
+		margin: -1px;
+	}
+
+	img {
+		height: 105px;
+		width: 105px;
+	}
+
+	.square img {
+		width: 88px;
+		height: 88px;
+	}
+
+
+
+	#culin-game-drag-zoom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap:30px;
+		max-width: 660px;
+	}
+
+	p {
+		margin-top: 2px;
+		font-size: 0.55rem;
+		}
+
+	#container > p {
+	margin-top: 15px;
+	font-size: 0.65rem;
+	}
+
+	#funfact{
+		color: #11030d;
+		font-family: Verdana, sans-serif;
+		text-align: center;
+		font-size: 0.65rem;
+		width: 90%;
+		max-width: 320px;
+		text-align: justify;
+		height: auto;
+	}
+	#culin-game-drag-zoom img {
+		height: 100px;
+		width: 100px;
+	}
+
+	.logo img {
+		padding-top: 10px;
+		height: 95px;
+		width: 95px;
+	
+	}
+	.lang-menu ul li a:before{
+		width: 24px;
+		height: 24px;
+		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
+	}
+
+	.lang-menu {
+		margin-top: 30px;
+		position: relative;
+		width: 40px;
+		
+	}
+
+	.lang-menu .selected-lang {
+		line-height: 1.6;
+		width: 78px;
+	}
+	.lang-menu ul {
+		top:25px;
+	}
+	
+	.lang-menu ul li a {
+		width: 85px;
+		height: 25px;
+		font-size: 12px;
+		padding: 2px 2px;
+
+		
+	}
+	
+	.ca:before {
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+	.fr:before {
+		background-image: url("https://flagsapi.com/FR/shiny/24.png");
+	}
+	header {
+		width: 80%;
+		height: 100px;
+	}
+}
+
+
+
+
+@media (max-width: 330px){
+    #level-title {
+		font-size:1.5rem;
+		margin-bottom: 30px;
+	}
+
+	/* #container {
+       display: flex;
+	   flex-direction: column;
+
+	   align-items: center;
+	} */
+	
+	.game-area {
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+	}
+
+	.drop-1 {
+		max-width: 200px;
+		padding: 10px;
+		height: 120px;
+		width: 120px;
+	}
+
+	.drop-1-after {
+		background-color: beige;
+		width: 100%;
+		height: 100%;
+		max-width: 100px;
+		padding: 1px;
+		border-radius: 5%;
+	}
+
+	img {
+		height: 105px;
+		width: 105px;
+	}
+
+	.square {
+		display: flex;
+		height: 90px;
+		width: 88px;
+		flex: 1 1 calc(50%-10%);
+		justify-items:center;
+		margin: 2px;
+		
+	}
+
+	.square img {
+		width: 88px;
+		height: 88px;
+	}
+
+	#culin-game-drag-zoom {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap:30px;
+		max-width: 660px;
+	}
+
+	p {
+		margin-top: 2px;
+		font-size: 0.65rem;
+		}
+
+	#container > p {
+	margin-top: 15px;
+	font-size: 0.60rem;
+	}
+
+	#funfact{
+		color: #11030d;
+		font-family: Verdana, sans-serif;
+		text-align: center;
+		font-size: 0.75rem;
+		width: 90%;
+		max-width: 280px;
+		text-align: justify;
+		height: auto;
+	}
+	#culin-game-drag-zoom img {
+		height: 100px;
+		width: 100px;
+	}
+
+	.logo img {
+		padding-top: 10px;
+		height: 95px;
+		width: 95px;
+	
+	}
+	.lang-menu ul li a:before{
+		width: 24px;
+		height: 24px;
+		/* background-image: url("https://flagsapi.com/CA/shiny/32.png"); */
+	}
+
+	.lang-menu {
+		margin-top: 30px;
+		position: relative;
+		width: 40px;
+		
+	}
+
+	.lang-menu .selected-lang {
+		line-height: 1.6;
+		width: 78px;
+	}
+	.lang-menu ul {
+		top:25px;
+	}
+	
+	.lang-menu ul li a {
+		width: 85px;
+		height: 25px;
+		font-size: 12px;
+		padding: 2px 2px;
+	}
+	
+	.ca:before {
+		background-image: url("https://flagsapi.com/CA/shiny/24.png");
+	}
+	.fr:before {
+		background-image: url("https://flagsapi.com/FR/shiny/24.png");
+	}
+	header {
+		width: 80%;
+		height: 100px;
+	}
+}
