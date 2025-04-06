@@ -18,7 +18,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 
 const corsOptions = {
-    origin: ['*'], // Allow only your frontend URL
+    origin: ['https://geedino07.github.io', 'https://geedino07.github.io/culinafricaa'], // Allow only your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
 };
