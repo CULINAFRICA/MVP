@@ -10,11 +10,13 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-app.use(cors({
-    origin: 'https://github.com/geedino07/culinafricaa', // replace with your actual GitHub Pages URL
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    credentials: true
-}));
+// app.use(cors({
+//     origin: 'https://github.com/geedino07/culinafricaa', // replace with your actual GitHub Pages URL
+//     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+//     credentials: true
+// }));
+
+// app.use(cors());
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -54,7 +56,7 @@ function logger (req, res, next) {
     next();
 }
 app.use(logger);
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname));
 
 
 app.get("/", (req, res) => {

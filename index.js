@@ -77,10 +77,10 @@ var dishDescriptionOptions = generateUniqueNumbers();
 console.log("dishDescriptionOptions sequence "+dishDescriptionOptions)
 
 //set new question image from africanDishes array
-document.querySelector(".drop-piece-1").setAttribute("src", "/assets/images/img/"+africanDishes[randomDishIndex]+"-P.png");
+document.querySelector(".drop-piece-1").setAttribute("src", "/images/img/"+africanDishes[randomDishIndex]+"-P.png");
 
 // gets the answer to the picture above and puts in any of the 4 options
-document.querySelector(".drag-piece-"+dishDescriptionOptions[0]).setAttribute("src", "/assets/images/img-d/"+(dishDescriptionAnswer[randomDescriptionAnswer].name)+".png");
+document.querySelector(".drag-piece-"+dishDescriptionOptions[0]).setAttribute("src", "/images/img-d/"+(dishDescriptionAnswer[randomDescriptionAnswer].name)+".png");
 document.querySelector(".drag-piece-"+dishDescriptionOptions[0]).setAttribute("id", (dishDescriptionAnswer[randomDescriptionAnswer].name));
 
 
@@ -92,13 +92,13 @@ var dishDescriptionOtherOptions2 = africanDishesEnglish.filter(obj => obj.id ===
 var dishDescriptionOtherOptions3 = africanDishesEnglish.filter(obj => obj.id === otherOptions[2]);
 
 //set images and id on the remaining 3 other options
-document.querySelector(".drag-piece-"+dishDescriptionOptions[1]).setAttribute("src", "/assets/images/img-d/"+(dishDescriptionOtherOptions1[randomDescriptionAnswerOption1].name)+".png");
+document.querySelector(".drag-piece-"+dishDescriptionOptions[1]).setAttribute("src", "/images/img-d/"+(dishDescriptionOtherOptions1[randomDescriptionAnswerOption1].name)+".png");
 document.querySelector(".drag-piece-"+dishDescriptionOptions[1]).setAttribute("id", (dishDescriptionOtherOptions1[randomDescriptionAnswerOption1].name));
 
-document.querySelector(".drag-piece-"+dishDescriptionOptions[2]).setAttribute("src", "/assets/images/img-d/"+(dishDescriptionOtherOptions2[randomDescriptionAnswerOption2].name)+".png");
+document.querySelector(".drag-piece-"+dishDescriptionOptions[2]).setAttribute("src", "/images/img-d/"+(dishDescriptionOtherOptions2[randomDescriptionAnswerOption2].name)+".png");
 document.querySelector(".drag-piece-"+dishDescriptionOptions[2]).setAttribute("id", (dishDescriptionOtherOptions2[randomDescriptionAnswerOption2].name));
 
-document.querySelector(".drag-piece-"+dishDescriptionOptions[3]).setAttribute("src", "/assets/images/img-d/"+(dishDescriptionOtherOptions3[randomDescriptionAnswerOption3].name)+".png");
+document.querySelector(".drag-piece-"+dishDescriptionOptions[3]).setAttribute("src", "/images/img-d/"+(dishDescriptionOtherOptions3[randomDescriptionAnswerOption3].name)+".png");
 document.querySelector(".drag-piece-"+dishDescriptionOptions[3]).setAttribute("id", (dishDescriptionOtherOptions3[randomDescriptionAnswerOption3].name));
 
 
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         // Update question image
-        document.querySelector(".drop-piece-1").setAttribute("src", `/assets/images/img/${africanDishes[newRandomIndex]}-P.png`);
+        document.querySelector(".drop-piece-1").setAttribute("src", `/images/img/${africanDishes[newRandomIndex]}-P.png`);
         document.querySelector(".drop-piece-1").setAttribute("alt", `${africanDishes[newRandomIndex]}'s picture`);
 
         // Get 4 new random options
@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Get correct answer position
         let correctOption = document.querySelector(`.drag-piece-${dishDescriptionOptions[0]}`);
-        correctOption.setAttribute("src", `/assets/images/img-d/${correctAnswer[randomDescriptionAnswer].name}.png`);
+        correctOption.setAttribute("src", `/images/img-d/${correctAnswer[randomDescriptionAnswer].name}.png`);
         correctOption.setAttribute("id", correctAnswer[randomDescriptionAnswer].name);
         correctOption.dataset.correct = "true"; // Mark correct option
 
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let wrongDish = dishData.filter(obj => obj.id === otherOptions[i - 1])[randomWrongDishAnswer].name;
 
             let wrongOption = document.querySelector(`.drag-piece-${dishDescriptionOptions[i]}`);
-            wrongOption.setAttribute("src", `/assets/images/img-d/${wrongDish}.png`);
+            wrongOption.setAttribute("src", `/images/img-d/${wrongDish}.png`);
             wrongOption.setAttribute("id", wrongDish);
             wrongOption.dataset.correct = "false"; // Mark incorrect options
         }
