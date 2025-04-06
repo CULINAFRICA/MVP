@@ -17,13 +17,22 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 
+const corsOptions = {
+    origin: ['https://geedino07.github.io', 'https://geedino07.github.io/culinafricaa'], // Allow only your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+};
 
-app.use(cors({
-    origin: ['https://geedino07.github.io', 'https://geedino07.github.io/culinafricaa'], // actual GitHub Pages URL
-    methods: ['GET', 'POST'],
-    // credentials: true,
-    allowedHeaders: 'Content-Type',
-}));
+// Apply CORS middleware globally
+app.use(cors(corsOptions));
+
+
+// app.use(cors({
+//     origin: ['https://geedino07.github.io', 'https://geedino07.github.io/culinafricaa'], // actual GitHub Pages URL
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     // credentials: true,
+//     allowedHeaders: ['Content-Type', 'Authorization'],
+// }));
 
 const port = process.env.PORT || 3000;
 
