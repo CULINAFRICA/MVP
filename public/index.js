@@ -154,10 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let footerContainer = document.querySelector(".footer-container");
     let footer = document.querySelector("footer");
     let lang = document.querySelector(".selected-lang");
-<<<<<<< HEAD:index.js
-=======
-
->>>>>>> backend:public/index.js
 
 
 
