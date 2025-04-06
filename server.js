@@ -10,6 +10,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+app.use(cors({
+    origin: 'https://github.com/geedino07/culinafricaa', // replace with your actual GitHub Pages URL
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+    credentials: true
+}));
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
