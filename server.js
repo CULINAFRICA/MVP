@@ -19,9 +19,9 @@ const app = express();
 
 
 app.use(cors({
-    origin: 'https://geedino07.github.io', // replace with your actual GitHub Pages URL
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    credentials: true,
+    origin: ['https://geedino07.github.io', 'https://geedino07.github.io/culinafricaa'], // actual GitHub Pages URL
+    methods: ['GET', 'POST'],
+    // credentials: true,
     allowedHeaders: 'Content-Type',
 }));
 
