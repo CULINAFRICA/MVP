@@ -80,7 +80,7 @@ app.get("/", (req, res) => {
 
 app.get("/api/logs", async (req, res) => {
    try {
-    visits = await db.query("select ip_address, browser, device_type, os from visits");
+    visits = await db.query("select ip_address, visited_at, browser, device_type, os from visits");
     res.json(visits.rows);
 
    } catch (e) {
