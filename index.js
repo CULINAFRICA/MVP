@@ -138,10 +138,9 @@ function generateUniqueNumbers() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    fetch("http://localhost:3000/api/log-visit", {
+    fetch("https://culinafricaa.onrender.com/api/log-visit", {
         method: "POST"
     });
-
     
     const dropZone = document.querySelector(".drop-1");
     const body = document.body;
