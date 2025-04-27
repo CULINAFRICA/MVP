@@ -1,5 +1,5 @@
-README.md<p align="center">
-  <img src="https://raw.githubusercontent.com/CULINAFRICA/MVP/main/culinafrica-logo.png" alt="CulinAfrica Logo" width="300"/>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/CULINAFRICA/MVP/master/culinafrica-logo.png" alt="CulinAfrica Logo" width="300"/>
 </p>
 
 # 🌍 CulinAfrica - MVP
@@ -28,7 +28,7 @@ Associez des plats africains à leurs images pour apprendre tout en vous amusant
 
 ## 🚀 Démo
 
-> La version de démonstration est disponible ici 
+> La version de démonstration est disponible ici (lien à venir).
 
 ---
 
@@ -41,10 +41,12 @@ Fondatrice de **CulinAfrica**
 
 ## 📫 Contact
 
-- 📧 Email : [djribolab@gmail.com](mailto:djribolab@gmail.com) 
+- 📧 Email : [djribolab@gmail.com](mailto:djribolab@gmail.com) (adresse officielle à venir)
+- 🔗 LinkedIn : (bientôt en ligne)
 
 ---
 
 ## 📝 Licence
 
-© 2025 CulinAfrica - Tous droits
+© 2025 CulinAfrica - Tous droits réservés.  
+Développé par Ama Ouattara 🌍
