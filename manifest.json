@@ -1,0 +1,21 @@
+{
+  "name": "CulinAfrica",
+  "short_name": "CulinAfrica",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "description": "Discover African cuisine through an educational and interactive game!",
+  "icons": [
+    {
+      "src": "culinafrica-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "culinafrica-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
