@@ -1,0 +1,3 @@
+[submodule "src/foodasmedicine"]
+	path = src/foodasmedicine
+	url = https://github.com/CULINAFRICA/culinafrica-foodasmedicine.git
